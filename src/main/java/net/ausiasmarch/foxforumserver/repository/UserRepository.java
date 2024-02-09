@@ -22,3 +22,5 @@ public interface UserRepository extends JpaRepository<UserEntity, Long> {
     @Query(value = "ALTER TABLE user AUTO_INCREMENT = 1", nativeQuery = true)
     void resetAutoIncrement();
 }
+
+

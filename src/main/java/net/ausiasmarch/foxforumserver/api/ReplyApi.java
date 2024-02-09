@@ -60,4 +60,10 @@ public class ReplyApi {
     public ResponseEntity<Long> empty() {
         return ResponseEntity.ok(oReplyService.empty());
     }
+
+    @GetMapping("/byRatingNumberDesc")
+    public ResponseEntity<Page<ReplyEntity>> getPageByRatingNumberDesc(Pageable oPageable,
+            @RequestParam(value = "user", defaultValue = "0", required = false) Long userId) {
+        return ResponseEntity.ok(oReplyService.getPageByRatingNumberDesc(oPageable, userId));
+    }
 }

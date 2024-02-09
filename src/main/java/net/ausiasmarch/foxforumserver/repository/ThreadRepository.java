@@ -8,6 +8,7 @@ import org.springframework.data.jpa.repository.Query;
 import net.ausiasmarch.foxforumserver.entity.ThreadEntity;
 
 public interface ThreadRepository extends JpaRepository<ThreadEntity, Long> {
+    
     Page<ThreadEntity> findByUserId(Long id, Pageable pageable);
 
     @Query(value = "SELECT t.*,count(r.id) FROM thread t, reply r WHERE t.id = r.id_thread GROUP BY t.id ORDER BY COUNT(r.id) desc", nativeQuery = true)

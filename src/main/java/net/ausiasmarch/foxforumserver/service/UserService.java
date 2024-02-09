@@ -30,6 +30,7 @@ public class UserService {
         return oUserRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("User not found"));
     }
 
+    // LLamada desde RatingAjaxService - UserAjaxService
     public UserEntity getByUsername(String username) {
         return oUserRepository.findByUsername(username)
                 .orElseThrow(() -> new ResourceNotFoundException("User not found by username"));

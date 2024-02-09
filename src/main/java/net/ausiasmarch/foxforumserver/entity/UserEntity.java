@@ -55,6 +55,7 @@ public class UserEntity {
 
     @OneToMany(mappedBy = "user", fetch = jakarta.persistence.FetchType.LAZY)
     private List<ReplyEntity> replies;
+    
 
     public UserEntity() {
         threads = new ArrayList<>();
